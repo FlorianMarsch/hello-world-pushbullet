@@ -1,4 +1,4 @@
-package com.fat_chicks.hello_world_pushbullet;
+package de.fat_chicks.hello_world_pushbullet;
 import java.io.IOException;
 
 import org.apache.http.auth.AuthScope;
@@ -30,10 +30,14 @@ public class PushBulletApiTest {
 		httppost.setHeader("Content-Type", "application/json");
 
 		JSONObject message = new JSONObject();
-		message.put("type", "note");
+		message.put("type", "file");
 		message.put("body", "Hello World :)");
 		message.put("channel_tag", System.getenv("PUSHBULLET_CHANNEL_TAG"));
 
+		message.put("file_name", "test.jpg");
+		message.put("file_type", "image/jpeg");
+		message.put("file_url", "https://www.comunio.de/bundesligaspieler/tradablePhoto.phtml/b/32525.gif");
+		
 		httppost.setEntity(new StringEntity(message.toString()));
 
 		client.execute(httppost);
