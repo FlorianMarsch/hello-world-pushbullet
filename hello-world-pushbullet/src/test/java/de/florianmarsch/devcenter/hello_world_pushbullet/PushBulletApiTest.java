@@ -1,4 +1,4 @@
-package de.fat_chicks.hello_world_pushbullet;
+package de.florianmarsch.devcenter.hello_world_pushbullet;
 import java.io.IOException;
 
 import org.apache.http.auth.AuthScope;
